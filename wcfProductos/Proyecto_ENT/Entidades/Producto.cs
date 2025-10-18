@@ -1,4 +1,4 @@
-﻿namespace Proyecto_ENT
+﻿namespace Proyecto_ENT.Entidades
 {
     public class Producto
     {
