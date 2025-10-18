@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Proyecto_ENT.Interfaces
 {
     public interface IRepositorio<T> where T : class
     {
-        IEnumerable<T> ObtenerTodos();
-        T ObtenerPorId(int id);
-        void Agregar(T entidad);
-        void Actualizar(T entidad);
-        void Eliminar(int id);
+        Task<IEnumerable<T>> ObtenerTodosAsync();
+        Task<T> ObtenerPorIdAsync(int id);
+        Task<int> AgregarAsync(T entidad);
+        Task ActualizarAsync(T entidad);
+        Task EliminarAsync(int id);
 
-        IEnumerable<T> GetPaged<TKey>(int pageNumber, int pageSize);
+        Task<IEnumerable<T>> ObtenerPaginadoAsync<TKey>(int numeroPagina, int registrosPagina);
     }
 }
