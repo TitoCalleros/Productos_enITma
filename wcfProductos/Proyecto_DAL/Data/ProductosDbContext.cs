@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Proyecto_ENT.Entidades;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Proyecto_ENT.Entidades;
 
 namespace Proyecto_DAL.Data
 {
     public class ProductosDbContext : DbContext
     {
 
-        public ProductosDbContext()
-        {            
+        public ProductosDbContext() : base("ProductosConnection")
+        {
+            // Deshabilitar la inicialización automática de la base de datos
+            Database.SetInitializer<ProductosDbContext>(null);
         }
 
         public DbSet<Exa_CatalogoProducto> Productos { get; set; }
