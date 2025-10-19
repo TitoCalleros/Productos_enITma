@@ -67,7 +67,7 @@ BEGIN
     VALUES (@descripcion, @idUsuario, GETDATE());
 
     -- Devolver el ID recién generado
-    SELECT SCOPE_IDENTITY() AS idProductoNuevo;
+    SELECT CAST(SCOPE_IDENTITY() AS INT) AS idProductoNuevo;
 END;
 GO
 
