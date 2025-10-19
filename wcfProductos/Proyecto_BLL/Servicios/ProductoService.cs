@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Proyecto_BLL.DTOs;
 using Proyecto_BLL.Interfaces;
+using Proyecto_DAL.Data.Repositorios;
 using Proyecto_ENT.Entidades;
 using Proyecto_ENT.Interfaces;
 
@@ -11,10 +13,10 @@ namespace Proyecto_BLL.Servicios
 {
     public class ProductoService : IProductosService
     {
-        private readonly IRepositorio<Exa_CatalogoProducto> _repo;
+        private readonly IProductoRepositorio _repo;
         private readonly IMapper _mapper;
 
-        public ProductoService(IRepositorio<Exa_CatalogoProducto> repo, IMapper mapper)
+        public ProductoService(IProductoRepositorio repo, IMapper mapper)
         {
             this._repo = repo;
             this._mapper = mapper;
