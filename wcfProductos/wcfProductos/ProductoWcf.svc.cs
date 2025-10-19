@@ -21,7 +21,14 @@ namespace wcfProductos
 
         public async Task<int> AgregarProducto(CreacionProductoDTO productoDTO)
         {
-            return await _productosService.CrearProductoAsync(productoDTO);
+            try
+            {
+                return await _productosService.CrearProductoAsync(productoDTO);
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException($"Error al agregar producto: {ex.Message}");
+            }
         }
 
         public async Task<List<ProductoDTO>> RecuperarCatalogo()
