@@ -26,7 +26,8 @@ namespace wcfProductos
                 _container.RegisterType<ProductosDbContext>(new HierarchicalLifetimeManager());
 
                 // Repositorio
-                _container.RegisterType<IRepositorio<Exa_CatalogoProducto>, Repositorio<Exa_CatalogoProducto>>();
+                _container.RegisterType(typeof(IRepositorio<>), typeof(Repositorio<>));
+                _container.RegisterType<IProductoRepositorio, ProductoRepositorio>();
 
                 // AutoMapper
                 var mapperConfig = new MapperConfiguration(cfg =>
