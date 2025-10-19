@@ -38,7 +38,7 @@ CREATE TABLE [Ventas].[Exa_CatalogoProducto]
 	[idProducto] INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,		
 	[descripcion] VARCHAR(256) NOT NULL,
 	[idUsuario] INT NOT NULL,
-	[FechaCreacion] DATETIME
+	[FechaCreacion] DATETIME DEFAULT (GETDATE())
 );
 GO
 
