@@ -15,6 +15,6 @@ namespace Proyecto_DAL.Data
         {            
         }
 
-        public DbSet<Producto> Productos { get; set; }
+        public DbSet<Exa_CatalogoProducto> Productos { get; set; }
     }
 }

@@ -11,10 +11,10 @@ namespace Proyecto_BLL.Servicios
 {
     public class ProductoService : IProductosService
     {
-        private readonly IRepositorio<Producto> _repo;
+        private readonly IRepositorio<Exa_CatalogoProducto> _repo;
         private readonly IMapper _mapper;
 
-        public ProductoService(IRepositorio<Producto> repo, IMapper mapper)
+        public ProductoService(IRepositorio<Exa_CatalogoProducto> repo, IMapper mapper)
         {
             this._repo = repo;
             this._mapper = mapper;
@@ -22,7 +22,7 @@ namespace Proyecto_BLL.Servicios
 
         public async Task<int> CrearProductoAsync(CreacionProductoDTO productoDTO)
         {
-            var producto = _mapper.Map<Producto>(productoDTO);
+            var producto = _mapper.Map<Exa_CatalogoProducto>(productoDTO);
 
             var idNuevoProducto = await _repo.AgregarAsync(producto);
 
